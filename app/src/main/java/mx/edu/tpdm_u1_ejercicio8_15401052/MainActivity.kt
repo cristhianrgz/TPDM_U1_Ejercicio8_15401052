@@ -13,7 +13,6 @@ class MainActivity : AppCompatActivity() {
     var layu : LinearLayout ?= null
     var abrir : Button ?= null
     var valores : EditText ?= null
-    var vector : Vector<String> ?= null
     var cadena = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,8 +24,8 @@ class MainActivity : AppCompatActivity() {
         valores = findViewById( R.id.editValores)
 
         abrir?.setOnClickListener {
-            var abrirActivity = Intent(this, Main2Activity::class.java)
             cadena = valores?.text.toString()
+            var abrirActivity = Intent(this, Main2Activity::class.java)
             abrirActivity.putExtra("valor",cadena)
 
             startActivity(abrirActivity)
